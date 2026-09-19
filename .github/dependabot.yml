@@ -4,10 +4,28 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 10
+      day: "monday"
+      time: "04:00"
+      timezone: "Europe/Istanbul"
+    open-pull-requests-limit: 5
+    groups:
+      python:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "deps(python)"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 10
+      day: "monday"
+      time: "04:30"
+      timezone: "Europe/Istanbul"
+    open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "deps(actions)"
