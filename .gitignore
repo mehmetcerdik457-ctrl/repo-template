@@ -8,3 +8,17 @@ node_modules/
 *.log
 dist/
 build/
+
+# Local credentials and signing material. This does not remove tracked files.
+.env.*
+!.env.example
+!.env.template
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.key
+local.properties
+google-services.json
+service-account*.json
+credentials*.json
