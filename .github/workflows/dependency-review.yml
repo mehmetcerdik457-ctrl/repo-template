@@ -1,0 +1,20 @@
+name: Dependency Review
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: dependency-review-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  review:
+    permissions:
+      contents: read
+      pull-requests: read
+    uses: mehmetcerdik457-ctrl/.github/.github/workflows/reusable-dependency-review.yml@85256537aac01769cee6d5614c7b0b68a0191435
