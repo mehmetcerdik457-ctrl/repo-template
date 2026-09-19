@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/mehmetcerdik457-ctrl/repo-template/security/policy
+    about: Do not disclose exploitable security details publicly.
