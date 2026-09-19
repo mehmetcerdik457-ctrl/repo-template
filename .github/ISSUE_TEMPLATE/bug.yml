@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a reproducible defect with evidence.
+title: "[BUG] "
+labels: []
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction and evidence
+      description: Include exact steps, logs, run IDs, hashes, and environment details. Redact secrets.
+    validations:
+      required: true
+  - type: checkboxes
+    id: hygiene
+    attributes:
+      label: Security hygiene
+      options:
+        - label: I did not include credentials, private keys, keystores, recovery codes, or other secrets.
+          required: true
