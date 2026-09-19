@@ -14,4 +14,4 @@ permissions:
 
 jobs:
   baseline:
-    uses: mehmetcerdik457-ctrl/.github/.github/workflows/reusable-python-baseline.yml@85256537aac01769cee6d5614c7b0b68a0191435
+    uses: mehmetcerdik457-ctrl/.github/.github/workflows/reusable-python-baseline.yml@8533c21000bd69bcb1c1ab480574e50140b9add8
