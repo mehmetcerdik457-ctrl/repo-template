@@ -2,7 +2,9 @@ name: Governance Labels
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - master-hardening-20260919
     paths:
       - '.github/workflows/governance-labels.yml'
   workflow_dispatch:
@@ -40,7 +42,9 @@ jobs:
             [ -n "$name" ] || continue
             if gh api "repos/$GITHUB_REPOSITORY/labels/$name" >/dev/null 2>&1; then
               gh api --method PATCH "repos/$GITHUB_REPOSITORY/labels/$name"                 -f new_name="$name" -f color="$color" -f description="$description" >/dev/null
+              echo "UPDATED=$name"
             else
               gh api --method POST "repos/$GITHUB_REPOSITORY/labels"                 -f name="$name" -f color="$color" -f description="$description" >/dev/null
+              echo "CREATED=$name"
             fi
           done <<< "$labels"
