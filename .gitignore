@@ -1,10 +1,73 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+*.secrets.*
+secrets/
+.private/
+
+# Python
 __pycache__/
 *.py[cod]
-node_modules/
-.env
-.DS_Store
-.idea/
-.vscode/
-*.log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
 dist/
 build/
+*.egg-info/
+
+# Node / web
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/
+coverage/
+.next/
+.nuxt/
+.svelte-kit/
+
+# Android / Java
+.gradle/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.apks
+*.apkm
+
+# AI/model caches and local data
+.cache/
+models/
+checkpoints/
+*.safetensors
+*.gguf
+*.onnx
+*.sqlite
+*.sqlite3
+*.db
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs and temporary output
+*.log
+tmp/
+temp/

@@ -1,0 +1,21 @@
+name: CodeQL
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: codeql-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  analyze:
+    permissions:
+      contents: read
+      security-events: write
+    uses: mehmetcerdik457-ctrl/.github/.github/workflows/reusable-codeql-python-actions.yml@8533c21000bd69bcb1c1ab480574e50140b9add8

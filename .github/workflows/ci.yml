@@ -1,10 +1,17 @@
 name: CI
-on: [push, pull_request]
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: '3.x'}
-      - run: python -V
+  baseline:
+    uses: mehmetcerdik457-ctrl/.github/.github/workflows/reusable-python-baseline.yml@8533c21000bd69bcb1c1ab480574e50140b9add8
